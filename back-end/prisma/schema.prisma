@@ -1,0 +1,92 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Admin {
+  id           Int         @id @default(autoincrement())
+  email        String      @unique
+  firstname    String
+  lastname     String
+  phonenumber  Int
+  role         String?     @default(value: "admin")
+  password     String
+  created_at   DateTime    @default(now())
+  university   University? @relation(fields: [universityId], references: [id])
+  universityId Int?        @unique
+
+  @@unique([email, password])
+}
+
+model University {
+  id          Int          @id @default(autoincrement())
+  name        String
+  address     String?
+  icon_url    String?
+  phonenumber Int          @unique
+  description String?
+  created_at  DateTime     @default(now())
+  Admin       Admin?
+  departments Department[]
+}
+
+model Department {
+  id           Int         @id @default(autoincrement())
+  name         String
+  description  String?
+  created_at   DateTime    @default(now())
+  University   University? @relation(fields: [universityId], references: [id])
+  universityId Int
+  teachers     Teacher[]
+}
+
+model Teacher {
+  id           Int              @id @default(autoincrement())
+  firstname    String
+  lastname     String
+  degree       String
+  photo_url    String?
+  phonenumber  Int?
+  created_at   DateTime         @default(now())
+  department   Department       @relation(fields: [departmentId], references: [id])
+  departmentId Int
+  diplomas     TeacherDiploma[]
+  email        String
+}
+
+model Diploma {
+  id               Int              @id @default(autoincrement())
+  title            String
+  written_year     String
+  file_url         String
+  writer_firstname String?
+  writer_lastname  String?
+  writer_stud_id   String?
+  description      String?
+  watched_count    Int              @default(0)
+  created_at       DateTime         @default(now())
+  teachers         TeacherDiploma[]
+  departmentId     Int
+}
+
+model TeacherDiploma {
+  id         Int      @id @default(autoincrement())
+  teacherId  Int
+  diplomaId  Int
+  created_at DateTime @default(now())
+  Teacher    Teacher  @relation(fields: [teacherId], references: [id])
+  Diploma    Diploma  @relation(fields: [diplomaId], references: [id])
+}
+
+model Feedback {
+  id         Int      @id @default(autoincrement())
+  text       String
+  created_at DateTime @default(now())
+}

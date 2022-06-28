@@ -1,0 +1,44 @@
+{
+    "diplomas": [
+        {
+            "id": 1,
+            "name": "Diploma in Computer Science",
+            "description": "Diploma in Computer Science",
+            "teacher": "Mr. John Doe",
+            "student": "Mr. John Doe",
+            "year": "2018"
+        },
+        {
+            "id": 2,
+            "name": "Diploma in Computer Engineering",
+            "description": "Diploma in Computer Engineering",
+            "teacher": "Mr. John Doe",
+            "student": "Mr. John Doe",
+            "year": "2018"
+        },
+        {
+            "id": 3,
+            "name": "Diploma in Software Engineering",
+            "description": "Diploma in Software Engineering",
+            "teacher": "Mr. John Doe",
+            "student": "Mr. John Doe",
+            "year": "2018"
+        },
+        {
+            "id": 4,
+            "name": "Diploma in Information Technology",
+            "description": "Diploma in Information Technology",
+            "teacher": "Mr. John Doe",
+            "student": "Mr. John Doe",
+            "year": "2018"
+        },
+        {
+            "id": 5,
+            "name": "Diploma in Information Systems",
+            "description": "Diploma in Information Systems",
+            "teacher": "Mr. John Doe",
+            "student": "Mr. John Doe",
+            "year": "2018"
+        }
+    ]
+}

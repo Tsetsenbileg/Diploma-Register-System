@@ -1,0 +1,113 @@
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.header-container {
+  background-color: #2f2fa2;
+  padding: 20px;
+}
+
+.logo {
+  padding-top: 1rem;
+  background-color: #2f2fa2;
+}
+
+.logo>span {
+  cursor: pointer;
+  color: white;
+  font-weight: 700;
+  font-size: 32px;
+  letter-spacing: 1px;
+  margin-left: 1rem;
+  /* display: flex; */
+  /* justify-content: center; */
+}
+
+.logo2>span {
+  cursor: pointer;
+  color: white;
+  font-weight: 500;
+  font-size: 24px;
+  letter-spacing: 1px;
+}
+
+.menu>.ant-btn.primary,
+.ant-btn.primary-button {
+  background: #f64c72;
+  color: white;
+  border: none;
+}
+
+.menu>.ant-btn.primary:hover,
+.ant-btn.primary-button:hover {
+  background-color: #2f2fa2;
+  color: white;
+}
+
+.ant-menu:not(.ant-menu-horizontal) .ant-menu-item-selected {
+  background-color: #2f2fa2 !important;
+}
+
+.menu>button.primary:focus,
+.ant-btn.primary-button:focus {
+  background-color: #f64c72;
+}
+
+.menu>.ant-btn.secondary {
+  background-color: transparent;
+  border: 1px solid #f64c72;
+  color: #f64c72;
+}
+
+.recommend-header {
+  padding: 0 1rem;
+  height: 40px;
+  font-size: 16px;
+  margin-top: 1rem;
+  color: white;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  background-color: #242582;
+}
+
+.recommend-body {
+  max-height: calc(100vh - 140px);
+  overflow: auto;
+}
+
+.diploma-card {
+  padding: 1rem;
+  border: 1px solid #242582;
+  /* border: 1px solid #99738e; */
+  margin-bottom: 1rem;
+}
+
+.login-container {
+  height: 60vh;
+}
+
+.login-container>.login {
+  width: 500px;
+  /* background-color: #2f2fa2; */
+  padding: 1rem;
+  text-align: center;
+  color: white;
+}
+
+/* .login {
+  width: 500px;
+} */
